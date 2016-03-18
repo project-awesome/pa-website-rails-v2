@@ -15,25 +15,16 @@ $( document ).ready(function () {
 				var selectedAnswer =  $('[name="q' + qNum + '"]:checked').attr('data-question-num');
 				if(answer.toString() === selectedAnswer) {
 					alert("You are correct!");
-					console.log("Correct!");
 				} else {
 					alert("Please try again");
-					console.log("Incorrect!");
 				}
 			} else if(questionType === "free-response") {
-				console.log($('[name="q' + qNum + '"]').data("type"));
 				var inputAnswer =  $('[name="q' + qNum + '"]').val().toString();
-				console.log(inputAnswer.toUpperCase());
-				console.log(answer.toUpperCase());
-
-				if(answer.toUpperCase() === inputAnswer.toUpperCase()) {
+				if(answer.toUpperCase() === inputAnswer.toUpperCase())
 					alert("You are correct!");
-					console.log("Correct!");
-
-				} else {
+				else
 					alert("Please try again");
-					console.log("Incorrect!");
-				}
+				
 			}
 		});
 		
