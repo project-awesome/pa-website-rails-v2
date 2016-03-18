@@ -20,7 +20,6 @@ class WelcomeController < ApplicationController
 		randSeed = ""
 	  for i in 0..7
 	  	random = Random.rand(15)
-			puts random
 	  	if random > 9
 	  		randSeed += (56+random).chr
 	  	else
