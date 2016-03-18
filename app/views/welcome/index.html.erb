@@ -1,6 +1,17 @@
-<h1>Project Awesome Prototype</h1>
+<!DOCTYPE html>
+<head>
+<title>Project Awesome</title>
 
-<p>URL:</p>
+<%= javascript_tag do %>
+  window.seed = '<%= @seed %>';
+  window.quiz = <%= raw @responseJson.to_json %>
+  window.url = <%= raw @url.to_json %>
+<% end %>
+
+</head>
+
+<body>
+<!-- <p>URL:</p>
 
 <pre><%= @url.inspect %></pre>
 
@@ -8,8 +19,26 @@
 <pre><%= @qd.inspect %></pre>
 
 <p>And this seed:</p>
-<pre><%= @seed.inspect %></pre>
+<pre><%= @seed.inspect %></pre> -->
 
-<p>Here is the resulting json from the pa web service:</p>
 
-<pre><%= @responseJson.inspect %></pre>
+<form method="GET">
+    Seed: <INPUT NAME="seed" />
+		<div class="dropdown">
+		  <button type="button" onclick="activateDropdown()" class="dropbtn">Question Type</button>
+		  <div id="myDropdown" class="dropdown-content">
+		    <button type="submit" name="questionType" value="mc">Multiple Choice</button>
+		    <button type="submit" name="questionType" value="fr">Free Response</button>
+		  </div>
+		</div>
+    <br/>
+</form>
+<br/>
+
+<pre><%= @questionHTML %></pre>
+
+<!-- <p>Here is the resulting json from the pa web service:</p>
+
+<pre><%= @responseJson %></pre> -->
+</body>
+</html>
